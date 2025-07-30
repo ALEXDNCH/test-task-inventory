@@ -34,10 +34,12 @@ const filledSlots = computed<(IInventoryItem | null)[]>(() => {
   }
   return result;
 });
+
+const aspectRatio = computed(() => `5 / ${INVENTORY_VISIBLE_SLOTS / 5}`);
 </script>
 
 <template>
-  <div class="inventory-slots" @mousemove="handleMouseMove" :style="`aspect-ratio: 5/ ${INVENTORY_VISIBLE_SLOTS/5}`">
+  <div class="inventory-slots" @mousemove="handleMouseMove" :style="{aspectRatio}">
     <InventoryItem v-for="slot in filledSlots" :key="slot?.id" :item="slot" @mouseenter="slot && handleMouseEnter(slot)"
                    @mouseleave="handleMouseLeave" />
     <Tooltip :x="tooltipX" :y="tooltipY" :text="tooltipText" :visible="tooltipVisible" />
@@ -48,7 +50,6 @@ const filledSlots = computed<(IInventoryItem | null)[]>(() => {
 .inventory-slots {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  //aspect-ratio: 5 / 8;
   overflow-y: auto;
   border: 1px solid #454545;
   margin-top: 8px;

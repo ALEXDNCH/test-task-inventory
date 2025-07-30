@@ -1,5 +1,27 @@
-# Vue 3 + TypeScript + Vite
+## 🚀 Start the Project
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### 📦 Install Dependencies
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+```bash
+npm install
+```
+
+### ▶️ Run in Development Mode
+
+```bash
+npm run dev
+```
+
+Open in your browser: [http://localhost:5173](http://localhost:5173)
+
+### 🛠️ Build the Project
+
+```bash
+npm run build
+```
+
+### ▶️ Run in Production Preview Mode
+
+```bash
+npm run preview
+```
