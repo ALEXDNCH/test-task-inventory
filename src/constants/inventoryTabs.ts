@@ -1,1 +1,1 @@
-export const InventoryTabs: string[] = ["BACKPACK", "NEXUS"];
+export const INVENTORY_TABS: string[] = ["BACKPACK", "NEXUS"];

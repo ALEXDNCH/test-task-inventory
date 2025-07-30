@@ -1,5 +1,7 @@
+import {FILTERS} from "@/constants/filters.ts";
+
 export type TItemType = "armor" | "weapon" | "misc";
-export type TFilterId = TItemType | "all";
+export type TFilterId = typeof FILTERS[number]['id'];
 export type TCaseParamType = 1 | 2 | 3;
 
 export interface IFilterItem {

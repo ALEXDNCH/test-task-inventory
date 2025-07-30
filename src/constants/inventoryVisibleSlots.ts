@@ -1,0 +1,1 @@
+export const INVENTORY_VISIBLE_SLOTS = 40;
