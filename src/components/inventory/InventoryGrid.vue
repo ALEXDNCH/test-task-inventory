@@ -23,9 +23,9 @@ function handleMouseLeave() {
 }
 
 const handleMouseMove = debounce((event: MouseEvent) => {
-  tooltipX.value = event.clientX + 12;
-  tooltipY.value = event.clientY + 12;
-}, 30);
+  tooltipX.value = event.clientX + 5;
+  tooltipY.value = event.clientY + 5;
+}, 15);
 
 const filledSlots = computed<(IInventoryItem | null)[]>(() => {
   const result: (IInventoryItem | null)[] = [...props.items];
@@ -37,7 +37,7 @@ const filledSlots = computed<(IInventoryItem | null)[]>(() => {
 </script>
 
 <template>
-  <div class="inventory-slots" @mousemove="handleMouseMove">
+  <div class="inventory-slots" @mousemove="handleMouseMove" :style="`aspect-ratio: 5/ ${INVENTORY_VISIBLE_SLOTS/5}`">
     <InventoryItem v-for="slot in filledSlots" :key="slot?.id" :item="slot" @mouseenter="slot && handleMouseEnter(slot)"
                    @mouseleave="handleMouseLeave" />
     <Tooltip :x="tooltipX" :y="tooltipY" :text="tooltipText" :visible="tooltipVisible" />
@@ -48,7 +48,7 @@ const filledSlots = computed<(IInventoryItem | null)[]>(() => {
 .inventory-slots {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  aspect-ratio: 5 / 8;
+  //aspect-ratio: 5 / 8;
   overflow-y: auto;
   border: 1px solid #454545;
   margin-top: 8px;

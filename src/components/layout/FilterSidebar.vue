@@ -27,6 +27,7 @@ const emit = defineEmits<{
   flex-direction: column;
   background: #393839;
   border-right: 1px solid #000000;
+  flex-shrink: 0;
 }
 
 .filter-button {

@@ -79,16 +79,13 @@ onUnmounted(() => {
   }
 
   &.armor::before {
-    background: radial-gradient(circle, #173659);
+    background: radial-gradient(circle at center, #173659 0%, transparent 100%);
   }
 
   &.weapon::before {
-    background: radial-gradient(circle, #342A47);
+    background: radial-gradient(circle at center, #342A47 0%, transparent 100%);
   }
-
-
 }
-
 
 .item-image {
   width: 80%;
@@ -133,6 +130,7 @@ onUnmounted(() => {
   color: white;
   font-weight: bold;
   pointer-events: none;
+  z-index: 3;
 }
 
 .cooldown {
@@ -149,8 +147,7 @@ onUnmounted(() => {
   font-size: 18px;
   color: white;
   pointer-events: none;
-  z-index: 6;
-
+  z-index: 3;
   @media (max-width: 505px) {
     & img{
       display: none;

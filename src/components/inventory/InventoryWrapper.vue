@@ -35,7 +35,7 @@ const handleClick = (id: TFilterId) => {
 <template>
   <div class="inventory-wrapper">
     <InventoryTabs />
-    <div class="flex">
+    <div class="inventory-content__wrapper">
       <FilterSidebar :selected=selectedFilter @update:filter="handleClick" />
       <main class="inventory-content">
         <InventoryLabel />
@@ -49,15 +49,20 @@ const handleClick = (id: TFilterId) => {
 .inventory-wrapper {
   width: 100%;
   max-width: 562px;
-  height: 100%;
   overflow-y: auto;
   background-color: #242223;
-  margin: 0 auto; 
+  margin: 0 auto;
+}
+
+.inventory-content__wrapper{
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
 }
 
 .inventory-content {
   width: 100%;
-  padding: clamp(8px, 15vw, 12px);
+  padding: clamp(8px, 2vw, 12px);
   flex: 3;
 }
 </style>
