@@ -57,7 +57,7 @@ const handleClick = (id: TFilterId) => {
 
 .inventory-content {
   width: 100%;
-  padding: 10px;
+  padding: clamp(8px, 15vw, 12px);
   flex: 3;
 }
 </style>

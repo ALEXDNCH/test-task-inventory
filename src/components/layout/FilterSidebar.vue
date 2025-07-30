@@ -23,18 +23,21 @@ const emit = defineEmits<{
 <style lang="scss">
 .filter-sidebar {
   display: flex;
-  flex: 0 0 64px;
+  width: clamp(52px, 17vw, 64px);
   flex-direction: column;
   background: #393839;
   border-right: 1px solid #000000;
 }
 
 .filter-button {
-  padding: 16px;
+  padding: clamp(10px,17vw,16px);
   border: none;
   cursor: pointer;
   opacity: 0.5;
   transition: opacity 0.3s;
+  & img{
+    width: 100%;
+  }
 }
 
 .filter-button._active {

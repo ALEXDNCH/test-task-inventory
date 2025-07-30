@@ -37,7 +37,7 @@ onUnmounted(() => {
       <div v-if="item.charges" class="top-left">{{ item.charges }}/{{ item.maxCharges }}</div>
       <div v-if="item.count" class="bottom-right">x{{ item.count }}</div>
       <div v-if="item.cooldown" class="cooldown" v-show="isRemaining">
-        <img src="../../assets/images/cooldown.svg" alt="cooldown">
+        <img src="@/assets/images/cooldown.svg" alt="cooldown">
         {{ remaining }}s
       </div>
     </template>
@@ -48,7 +48,8 @@ onUnmounted(() => {
 .inventory-slot {
   position: relative;
   aspect-ratio: 1 / 1;
-  width: 80px;
+  height: auto;
+  width: clamp(50px, 14vw, 80px);
   background-color: #1a1a1a;
   border: 1.5px solid #454545;
   display: flex;
@@ -56,7 +57,6 @@ onUnmounted(() => {
   justify-content: center;
 
   &._cooldown {
-
     &>img,
     .bottom-right {
       opacity: 0.5;
@@ -86,16 +86,13 @@ onUnmounted(() => {
     background: radial-gradient(circle, #342A47);
   }
 
-  @media (max-width: 505px) {
-    width: 60px;
-  }
+
 }
 
 
 .item-image {
   width: 80%;
   height: 80%;
-  object-fit: contain;
   z-index: 3;
 }
 
@@ -118,7 +115,7 @@ onUnmounted(() => {
   &::before {
     content: "";
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 0;
     width: 170%;
     height: 170%;
@@ -152,6 +149,12 @@ onUnmounted(() => {
   font-size: 18px;
   color: white;
   pointer-events: none;
-  z-index: 3;
+  z-index: 6;
+
+  @media (max-width: 505px) {
+    & img{
+      display: none;
+    }
+  }
 }
 </style>
