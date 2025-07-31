@@ -79,11 +79,11 @@ onUnmounted(() => {
   }
 
   &.armor::before {
-    background: radial-gradient(circle at center, #173659 0%, transparent 100%);
+    background: radial-gradient(circle at center, #173659 0%, #173659 100%);
   }
 
   &.weapon::before {
-    background: radial-gradient(circle at center, #342A47 0%, transparent 100%);
+    background: radial-gradient(circle at center, #41325F 0%, #41325F 100%);
   }
 }
 

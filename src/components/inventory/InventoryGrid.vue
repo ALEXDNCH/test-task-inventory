@@ -1,31 +1,13 @@
 <script lang="ts" setup>
 import type { IInventoryItem } from '@/types/item.type';
 import InventoryItem from './InventoryItem.vue';
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import Tooltip from "../Tooltip.vue"
-import { debounce } from '@/utils/debounce';
+import {useTooltip} from "@/constants/useTooltip.ts";
 import {INVENTORY_VISIBLE_SLOTS} from "@/constants/inventoryVisibleSlots.ts";
 
+const {tooltipX, tooltipY, tooltipText, tooltipVisible , handleMouseMove, handleMouseLeave, handleMouseEnter} = useTooltip()
 const props = defineProps<{ items: IInventoryItem[] }>();
-
-const tooltipX = ref(0);
-const tooltipY = ref(0);
-const tooltipText = ref('');
-const tooltipVisible = ref(false);
-
-function handleMouseEnter(item: IInventoryItem) {
-  tooltipText.value = item.name;
-  tooltipVisible.value = true;
-}
-
-function handleMouseLeave() {
-  tooltipVisible.value = false;
-}
-
-const handleMouseMove = debounce((event: MouseEvent) => {
-  tooltipX.value = event.clientX + 5;
-  tooltipY.value = event.clientY + 5;
-}, 15);
 
 const filledSlots = computed<(IInventoryItem | null)[]>(() => {
   const result: (IInventoryItem | null)[] = [...props.items];
